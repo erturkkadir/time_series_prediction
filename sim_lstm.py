@@ -1,9 +1,12 @@
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 np.random.seed(1337)
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout, GRU, Activation
 from sklearn.preprocessing import MinMaxScaler
+from stockstats import StockDataFrame
+from scipy.signal import wiener
 
 
 class MyLSTM(object):
@@ -19,8 +22,6 @@ class MyLSTM(object):
         self.batch_size = 0
         self.time_steps = 0
         self.data = []
-        self.n1_cells = 0
-        self.n2_cells = 0
         self.delta_t = 0
         self.epochs = 0
         self.train_size = 0
@@ -28,13 +29,10 @@ class MyLSTM(object):
         self.raw_data = []
         self.full_data = []
         self.prediction = []
-        plt.ion()
+        self.stock = []
 
-    def init_params(self, epochs, n1_cells, n2_cells, delta_t, train_size, time_steps, output_size
-                    , batch_size):
+    def init_params(self, epochs, delta_t, train_size, time_steps, output_size, batch_size):
         self.epochs = epochs
-        self.n1_cells = n1_cells
-        self.n2_cells = n2_cells
         self.delta_t = delta_t
         self.train_size = train_size
         self.time_steps = time_steps
@@ -76,15 +74,13 @@ class MyLSTM(object):
         return last_value, trans_y
 
     def set_data(self, tmp):
-        self.full_data = tmp
-
-        data = tmp[-self.train_size:, 2]  # 2nd column "close"
-        data = data.reshape(-1, 1)
-        self.raw_data = data.astype(float)
-        self.data = np.array(self.scalar.fit_transform(data))
-        self.data_size = len(self.data)
-        self.half_size = int(self.data_size/2)
-        self.features = int(self.half_size)
+        # shape of tmp is (train_size, 6)
+        self.raw_data = tmp                         # save original data for potential uses
+        close = tmp[:, 2].reshape(-1, 1)            # 2nd column "close" shape is (train_size, 1)
+        self.data = np.array(self.scalar.fit_transform(close))   # scale close column between (0, -1)
+        self.data_size = len(self.data)             # train_size
+        self.half_size = int(self.data_size/2)      # train_size / 2
+        self.features = int(self.half_size)         # train_size / 2
 
     def prepare_data(self):
         data_x = []
