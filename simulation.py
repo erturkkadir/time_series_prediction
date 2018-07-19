@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 import matplotlib.pyplot as plt
-from indicators import Indicators
+
 
 np.random.seed(1337)        # for reproducibility
 
@@ -22,7 +22,6 @@ output_size = 3                     # Number of points to estimate
 step = 1                            # shift 1 steps to test each time
 
 lstm = MyLSTM()                     # LSTM Functions
-indicators = Indicators()           # Indicators
 
 for inst in instruments:            # All pairs
     for delta_t in delta_ts:        # All sampling rates
@@ -44,13 +43,11 @@ for inst in instruments:            # All pairs
                     idx_sta = i                                     # start index
                     idx_end = i + train_size                        # end index
                     tmp_np = pd_data[idx_sta:idx_end, :]            # shape is (time_steps, 6) numpy format
-                    tmp_pd = pd.iloc[idx_sta:idx_end, 2]            # panda format
+                    current = tmp_np[-1, 2]                         # Last close value
 
-                    indicators.set_data(tmp_pd)                     # set data for indicators
-                    indicators.get_result()
+                    lstm.set_data(tmp_np)                           # set data for LSTM object
+                    futures = lstm.lstm_opinion()          # What is LSTM opinion
 
-                    lstm.set_data(tmp_np)  # set data for LSTM object
-                    current, futures = lstm.lstm_opinion()          # What is LSTM opinion
                     futures = futures[0, :]                         # estimated values, size : output_size
                     actual = pd_data[idx_end:idx_end + output_size, 2]  # what is the actual value
                     print("Current : ", current)                    #
@@ -63,7 +60,9 @@ for inst in instruments:            # All pairs
 
                     print("Estimated PIP Changes : ", est_pip)      #
                     print("Actual    PIP Changes : ", act_pip)      #
-                    print("Error in Estimation   : ", error_term)   #
+                    print("*****************")
+                    print("Error in Direction   : ", act_pip/est_pip)#
+                    print("*****************")
                     current_time = pd_data[idx_sta:idx_end, 1]      # When all happen
                     res.append([current, futures[-1]])              # Save them to plot later on
 

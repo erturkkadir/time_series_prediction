@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a5bbdfc-7ee6-472e-8ec5-4ff690daa811" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/indicators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/lstm_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/lstm_test.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/indicators.py" beforeDir="false" afterPath="$PROJECT_DIR$/indicators.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sim_lstm.py" beforeDir="false" afterPath="$PROJECT_DIR$/sim_lstm.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/simulation.py" afterDir="false" />
     </list>
@@ -18,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="simulation.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="simulation.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simulation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="770">
+              <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -33,30 +31,35 @@
       <file leaf-file-name="sim_lstm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sim_lstm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
+            <state relative-caret-position="32">
+              <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <element signature="e#346#887#0" />
+                <element signature="e#357#870#0" />
                 <element signature="e#1025#1292#0" />
-                <element signature="e#1260#1332#0" />
-                <element signature="e#1373#2501#0" />
-                <element signature="e#2933#4457#0" />
-                <element signature="e#4546#4888#0" />
+                <element signature="e#1194#2322#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="indicators.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="indicators.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/indicators.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+            <state relative-caret-position="90">
+              <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <element signature="e#324#477#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EUR_CAD.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/M1/EUR_CAD.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -79,13 +82,13 @@
         <option value="$PROJECT_DIR$/sim_env_lstm.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/sim_lstm.py" />
-        <option value="$PROJECT_DIR$/simulation.py" />
         <option value="$PROJECT_DIR$/indicators.py" />
+        <option value="$PROJECT_DIR$/simulation.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
+    <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -110,6 +113,12 @@
               <item name="lstm_test" type="b2602c69:ProjectViewProjectNode" />
               <item name="lstm_test" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="lstm_test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="lstm_test" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="M1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -167,17 +176,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3325792" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50052685" side_tool="true" weight="0.3944134" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3519553" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32466063" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3944134" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32402235" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49947312" weight="0.59664804" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -193,13 +202,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/simulation.py</url>
-          <line>48</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -207,53 +209,63 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="10" />
+      <option name="time" value="54" />
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="fft_x[-2]=rsi1" language="Python" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>StockDataFrame.retype(self.raw_data)</expression-string>
+        <expression-string>fft_x[-2]=rsi1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>self.raw_data</expression-string>
+        <expression-string>fft_x[-1]=rsi1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tmp[:,2]</expression-string>
+        <expression-string>fft_x[31]=rsi1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tmp[1,2]</expression-string>
+        <expression-string>fft_x[32]=rsi1</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tmp[,2]</expression-string>
+        <expression-string>new_lb.iloc[-1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tmp[1,:2]</expression-string>
+        <expression-string>new_lb</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tmp[,:2]</expression-string>
+        <expression-string>df.close.values</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>data.shape</expression-string>
+        <expression-string>tmp</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>tmp.shape</expression-string>
+        <expression-string>self.stock.close.values</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>self.stock.values</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -286,12 +298,9 @@
           <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#346#887#0" />
+            <element signature="e#357#870#0" />
             <element signature="e#1025#1292#0" />
-            <element signature="e#1260#1332#0" />
-            <element signature="e#1373#2501#0" />
-            <element signature="e#2933#4457#0" />
-            <element signature="e#4546#4888#0" />
+            <element signature="e#1194#2322#0" />
           </folding>
         </state>
       </provider>
@@ -321,39 +330,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sim_lstm.py">
+    <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/pandas/core/series.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="150" column="25" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#346#887#0" />
-            <element signature="e#1025#1292#0" />
-            <element signature="e#1260#1332#0" />
-            <element signature="e#1373#2501#0" />
-            <element signature="e#2933#4457#0" />
-            <element signature="e#4546#4888#0" />
-          </folding>
+        <state relative-caret-position="172">
+          <caret line="764" selection-start-line="764" selection-end-line="764" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simulation.py">
+    <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/pandas/core/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="193">
+          <caret line="919" selection-start-line="919" selection-end-line="919" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../timeseries/venv/Lib/site-packages/stockstats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="972" selection-start-line="972" selection-end-line="972" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/M1/EUR_CAD.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sim_lstm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="94" column="32" selection-start-line="94" selection-start-column="32" selection-end-line="94" selection-end-column="32" />
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#357#870#0" />
+            <element signature="e#1025#1292#0" />
+            <element signature="e#1194#2322#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/indicators.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
+        <state relative-caret-position="90">
+          <caret line="25" column="36" selection-start-line="25" selection-start-column="36" selection-end-line="25" selection-end-column="36" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <element signature="e#324#477#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simulation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="64" column="46" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,8 +5,9 @@ np.random.seed(1337)
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout, GRU, Activation
 from sklearn.preprocessing import MinMaxScaler
-from stockstats import StockDataFrame
-from scipy.signal import wiener
+from indicators import Indicators
+
+indicators = Indicators()
 
 
 class MyLSTM(object):
@@ -29,7 +30,7 @@ class MyLSTM(object):
         self.raw_data = []
         self.full_data = []
         self.prediction = []
-        self.stock = []
+        self.close = []
 
     def init_params(self, epochs, delta_t, train_size, time_steps, output_size, batch_size):
         self.epochs = epochs
@@ -39,11 +40,16 @@ class MyLSTM(object):
         self.output_size = output_size
         self.batch_size = batch_size
 
-    def lstm_opinion(self):
-        current, futures = self.get_prediction()
-        return current, futures
+    def set_data(self, tmp):
+        # shape of tmp is (train_size, 6)
+        self.raw_data = tmp  # save original data for potential uses
+        self.close = tmp[:, 2].reshape(-1, 1)  # 2nd column "close" shape is (train_size, 1)
+        self.data = np.array(self.scalar.fit_transform(self.close))  # scale close column between (0, -1)
+        self.data_size = len(self.data)  # train_size
+        self.half_size = int(self.data_size / 2)  # train_size / 2
+        self.features = int(self.half_size)  # train_size / 2
 
-    def get_prediction(self):
+    def lstm_opinion(self):
 
         train_x, train_y, pred_x = self.prepare_data()
         self.batch_size = train_x.shape[0]
@@ -71,16 +77,7 @@ class MyLSTM(object):
         # print("Pred : ", trans_y)
         self.prediction = np.array(trans_y).reshape(-1, 1)
 
-        return last_value, trans_y
-
-    def set_data(self, tmp):
-        # shape of tmp is (train_size, 6)
-        self.raw_data = tmp                         # save original data for potential uses
-        close = tmp[:, 2].reshape(-1, 1)            # 2nd column "close" shape is (train_size, 1)
-        self.data = np.array(self.scalar.fit_transform(close))   # scale close column between (0, -1)
-        self.data_size = len(self.data)             # train_size
-        self.half_size = int(self.data_size/2)      # train_size / 2
-        self.features = int(self.half_size)         # train_size / 2
+        return trans_y
 
     def prepare_data(self):
         data_x = []
@@ -93,8 +90,17 @@ class MyLSTM(object):
                 ix1 = i + k
                 ix2 = i + k + self.half_size
                 inp_x = self.data[ix1:ix2]  # [0:127] [1:128] ....
-                # print("Train data i, k ix1 ix2 ", i, k, ix1, ix2)     # Since last item excluded
+                # print("Train data i, k ix1 ix2 ", i, k, ix1, ix2)
+                df = self.raw_data[ix1:ix2]
+                indicators.set_data(df)                                 # set data for indicators
+                rsi1, rsi2, mac1, mac2, bl_up, bl_dn = indicators.get_result()
                 fft_x = self.get_fft(np.reshape(inp_x, -1))
+                fft_x[-1] = rsi1
+                fft_x[-2] = rsi2
+                fft_x[-3] = mac1
+                fft_x[-4] = mac2
+                fft_x[-5] = bl_dn
+                fft_x[-6] = bl_up
                 sub_x.append(fft_x)
             data_x.append(sub_x)
             iy1 = i + k + self.half_size
@@ -130,7 +136,7 @@ class MyLSTM(object):
         fft[0:2] = 0
         fft[n2:n] = np.arctan2(np.real(tft[n2:n]), np.imag(tft[n2:n]))
         # fft[n2:n] = np.real(tft[n2:n]) - np.imag(tft[n2:n])
-        return tmp
+        return fft
 
     def draw(self):
 
