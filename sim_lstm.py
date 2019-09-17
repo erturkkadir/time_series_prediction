@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 np.random.seed(1337)
-from keras.models import Sequential
-from keras.layers import LSTM, Dense, Dropout, GRU, Activation
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense, Dropout, GRU, Activation
 from sklearn.preprocessing import MinMaxScaler
 
 

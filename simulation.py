@@ -32,7 +32,7 @@ plt.ion()
 for inst in instruments:            # All pairs
     for delta_t in delta_ts:        # All sampling rates
         f_name = 'data/M' + str(delta_t) + "/" + inst + '.csv'
-        pd = pd.read_csv(f_name, tupleize_cols=True, usecols=['time', 'open', 'close', 'high', 'low', 'volume'])
+        pd = pd.read_csv(f_name,  usecols=['time', 'open', 'close', 'high', 'low', 'volume'])
         pd_data = np.array(pd)
         data_len = len(pd_data)     # 2048
         x = np.arange(len(pd_data))
